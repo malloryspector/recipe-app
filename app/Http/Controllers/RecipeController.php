@@ -22,7 +22,11 @@ class RecipeController extends Controller {
   public function getShow($id = null) {
     $recipe = \Recipe\Recipe::find($id);
 
-    return view('recipes.show')->with('recipe', $recipe);
+    $ingredient = \Recipe\Ingredient::first();
+
+    return view('recipes.show')
+      ->with('recipe', $recipe)
+      ->with('ingredient', $ingredient);
   }
 
   /**
