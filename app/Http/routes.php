@@ -16,12 +16,12 @@ Route::get('/', function () {
 });
 
 Route::get('/recipe/show', 'RecipeController@getIndex');
-Route::get('/recipe/show/{recipe_id?}', 'RecipeController@getShow');
+Route::get('/recipe/show/{id?}', 'RecipeController@getShow');
 Route::get('/recipe/create', 'RecipeController@getCreate');
 Route::post('/recipe/create', 'RecipeController@postCreate');
-Route::get('/recipe/edit/{recipe_id?}', 'RecipeController@getEdit');
-Route::post('/recipe/edit/{recipe_id?}', 'RecipeController@postEdit');
-//::get('/recipe/delete/{recipe_id?}', 'RecipeController@getDelete');
+Route::get('/recipe/edit/{id?}', 'RecipeController@getEdit');
+Route::post('/recipe/edit', 'RecipeController@postEdit');
+Route::get('/recipe/delete/{id}', 'RecipeController@getDelete');
 
 Route::get('/practice', function() {
   echo 'Hello World';

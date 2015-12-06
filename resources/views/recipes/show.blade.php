@@ -1,15 +1,12 @@
 @extends('layouts.master')
 
 @section('title')
-  My Recipes
+  {{ $recipe->recipe_name }}
 @stop
 
 @section('content')
-  <h1>My Recipes</h1>
-
-  <h4>First Recipe Name</h4>
-  <p><a>View</a> | <a>Edit</a> | <a>Delete</a></p>
-
-  <h4>Second Recipe Name</h4>
-  <p><a>View</a> | <a>Edit</a> | <a>Delete</a></p>
+  <h4>{{ $recipe->recipe_name }}</h4>
+  <p>{{ $recipe->directions }}</p>
+  <p>{{ $recipe->prep_time }}</p>
+  <p>{{ $recipe->cook_time }}</p>
 @stop
