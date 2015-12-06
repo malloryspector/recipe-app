@@ -38,7 +38,7 @@ class RecipeController extends Controller {
   * Responds to requests to GET /recipe/edit/{recipe_id}
   */
   public function getEdit() {
-    echo 'Edit a recipe';
+    return view('recipes.edit');
   }
 
   /**
