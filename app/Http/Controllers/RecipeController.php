@@ -22,11 +22,11 @@ class RecipeController extends Controller {
   public function getShow($id = null) {
     $recipe = \Recipe\Recipe::find($id);
 
-    $ingredient = \Recipe\Ingredient::first();
+    $ingredients = \Recipe\Ingredient::where('recipe_id', '=', $id)->get();
 
     return view('recipes.show')
       ->with('recipe', $recipe)
-      ->with('ingredient', $ingredient);
+      ->with('ingredients', $ingredients);
   }
 
   /**
@@ -49,6 +49,16 @@ class RecipeController extends Controller {
 
     $recipe->save();
 
+    $ingredients = new \Recipe\Ingredient();
+
+    $ingredients->ingredient_name = $request->ingredient_name;
+    $ingredients->quantity_whole = $request->quantity_whole;
+    $ingredients->quantity_part = $request->quantity_part;
+    $ingredients->unit = $request->unit;
+    $ingredients->recipe_id = $recipe->id;
+
+    $ingredients->save();
+
     return redirect('/recipe/show');
   }
 
@@ -58,7 +68,11 @@ class RecipeController extends Controller {
   public function getEdit($id = null) {
     $recipe = \Recipe\Recipe::find($id);
 
-    return view('recipes.edit')->with('recipe', $recipe);
+    $ingredients = \Recipe\Ingredient::where('recipe_id', '=', $id)->first();
+
+    return view('recipes.edit')
+      ->with('recipe', $recipe)
+      ->with('ingredients', $ingredients);
   }
 
   /**
@@ -73,6 +87,15 @@ class RecipeController extends Controller {
     $recipe->cook_time = $request->cook_time;
 
     $recipe->save();
+
+    $ingredients = \Recipe\Ingredient::where('recipe_id', '=', $request->id)->first();
+
+    $ingredients->ingredient_name = $request->ingredient_name;
+    $ingredients->quantity_whole = $request->quantity_whole;
+    $ingredients->quantity_part = $request->quantity_part;
+    $ingredients->unit = $request->unit;
+
+    $ingredients->save();
 
     return redirect('/recipe/show/' . $request->id);
   }

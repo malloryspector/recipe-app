@@ -22,8 +22,8 @@
           <input type="text" class="form-control" id="ingredient_name" name="ingredient_name" value="">
         </div>
         <div class="col-sm-1">
-          <label for="ingredient_qty_whole">Quantity:</label>
-          <select class="form-control" id="ingredient_qty_whole" name="ingredient_qty_whole">
+          <label for="quantity_whole">Quantity:</label>
+          <select class="form-control" id="quantity_whole" name="quantity_whole">
             <option value="0"></option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -33,26 +33,26 @@
           </select>
         </div>
         <div class="col-sm-1">
-          <label for="ingredient_qty_part">&nbsp</label>
-          <select class="form-control" id="ingredient_qty_part" name="ingredient_qty_part">
+          <label for="quantity_part">&nbsp</label>
+          <select class="form-control" id="quantity_part" name="quantity_part">
             <option value="0"></option>
-            <option value="1">1/8</option>
-            <option value="2">1/4</option>
-            <option value="3">3/8</option>
-            <option value="4">1/2</option>
-            <option value="5">5/8</option>
-            <option value="6">3/4</option>
-            <option value="7">7/8</option>
+            <option value="1/8">1/8</option>
+            <option value="1/4">1/4</option>
+            <option value="3/8">3/8</option>
+            <option value="1/2">1/2</option>
+            <option value="5/8">5/8</option>
+            <option value="3/4">3/4</option>
+            <option value="7/8">7/8</option>
           </select>
         </div>
         <div class="col-sm-2">
-          <label for="ingredient_unit">Unit:</label>
-          <select class="form-control" id="ingredient_unit" name="ingredient_unit">
-            <option value="1">tsp</option>
-            <option value="2">tbsp</option>
-            <option value="3">oz</option>
-            <option value="4">cup</option>
-            <option value="5">pound</option>
+          <label for="unit">Unit:</label>
+          <select class="form-control" id="unit" name="unit">
+            <option value="tsp">tsp</option>
+            <option value="tbsp">tbsp</option>
+            <option value="oz">oz</option>
+            <option value="cup">cup</option>
+            <option value="pound">pound</option>
           </select>
         </div>
       </div>

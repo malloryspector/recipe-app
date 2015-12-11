@@ -7,7 +7,9 @@
 @section('content')
   <h4>{{ $recipe->recipe_name }}</h4>
   <p>{{ $recipe->directions }}</p>
-  <p>{{ $ingredient->quantity_whole . $ingredient->quantity_part }} &nbsp {{ $ingredient->ingredient_name }}</p>
+  @foreach($ingredients as $ingredient)
+    <p>{{ $ingredient->quantity_whole . ' ' . $ingredient->quantity_part . ' ' . $ingredient->unit . ' ' . $ingredient->ingredient_name }}</p>
+  @endforeach
   <p>{{ $recipe->prep_time }}</p>
   <p>{{ $recipe->cook_time }}</p>
 @stop

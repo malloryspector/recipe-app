@@ -15,7 +15,7 @@ class CreateIngredientsTable extends Migration {
         $table->timestamps();
         $table->string('ingredient_name');
         $table->integer('quantity_whole')->unsigned();
-        $table->float('quantity_part')->unsigned();
+        $table->string('quantity_part');
         $table->string('unit');
       });
     }

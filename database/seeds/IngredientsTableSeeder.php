@@ -14,7 +14,7 @@ class IngredientsTableSeeder extends Seeder {
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         'ingredient_name' => 'Peanut Butter',
         'quantity_whole' => 1,
-        'quantity_part' => .25,
+        'quantity_part' => '1/4',
         'unit' => 'tbsp',
         'recipe_id' => 1,
       ]);
@@ -23,7 +23,7 @@ class IngredientsTableSeeder extends Seeder {
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         'ingredient_name' => 'Raisins',
         'quantity_whole' => 0,
-        'quantity_part' => .25,
+        'quantity_part' => '0',
         'unit' => 'cups',
         'recipe_id' => 1,
       ]);
@@ -32,7 +32,7 @@ class IngredientsTableSeeder extends Seeder {
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         'ingredient_name' => 'Celery',
         'quantity_whole' => 5,
-        'quantity_part' => 0,
+        'quantity_part' => '7/8',
         'unit' => 'stalks',
         'recipe_id' => 1,
       ]);
