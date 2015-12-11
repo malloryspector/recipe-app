@@ -16,6 +16,7 @@ class IngredientsTableSeeder extends Seeder {
         'quantity_whole' => 1,
         'quantity_part' => .25,
         'unit' => 'tbsp',
+        'recipe_id' => 1,
       ]);
       DB::table('ingredients')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -24,6 +25,7 @@ class IngredientsTableSeeder extends Seeder {
         'quantity_whole' => 0,
         'quantity_part' => .25,
         'unit' => 'cups',
+        'recipe_id' => 1,
       ]);
       DB::table('ingredients')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -32,6 +34,7 @@ class IngredientsTableSeeder extends Seeder {
         'quantity_whole' => 5,
         'quantity_part' => 0,
         'unit' => 'stalks',
+        'recipe_id' => 1,
       ]);
     }
 }
