@@ -104,8 +104,14 @@ class RecipeController extends Controller {
   * Responds to requests to GET /recipe/delete/{id}
   */
   public function getDelete($id) {
-    $recipe = \Recipe\Recipe::find($id);
 
+    $ingredients = \Recipe\Ingredient::where('recipe_id', '=', $id)->get();
+
+    foreach($ingredients as $ingredient) {
+      $ingredient->delete();
+    }
+
+    $recipe = \Recipe\Recipe::find($id);
     $recipe->delete();
 
     return redirect('/recipe/show');
