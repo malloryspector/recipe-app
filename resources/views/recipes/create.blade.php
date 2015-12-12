@@ -12,14 +12,14 @@
     {{-- Recipe Name --}}
     <div class="form-group">
       <label for="recipe_name">Recipe Name:</label>
-      <input type="text" class="form-control" id="recipe_name" name="recipe_name" value="">
+      <input type="text" class="form-control" id="recipe_name" name="recipe_name">
     </div>
     {{-- Ingredients --}}
-    <div class="form-group">
+    <div class="form-group" id="ingredient">
       <div class="row">
         <div class="col-sm-8">
           <label for="ingredient_name">Ingredient Name:</label>
-          <input type="text" class="form-control" id="ingredient_name" name="ingredient_name" value="">
+          <input type="text" class="form-control" id="ingredient_name" name="ingredient_name">
         </div>
         <div class="col-sm-1">
           <label for="quantity_whole">Quantity:</label>
@@ -57,6 +57,7 @@
         </div>
       </div>
     </div>
+    <a href="#" id="add_ingredient">Add another ingredient</button>
     {{-- Directions --}}
     <div class="form-group">
       <label for="directions">Directions:</label>
