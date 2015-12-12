@@ -30,8 +30,15 @@
       <div class="container">
         <a href="/" class="navbar-brand">Digital Recipe Box</a>
         <ul class="nav nav-pills pull-right">
-          <li><a href="/recipe/show">My Recipes</a></li>
-          <li><a href="/recipe/create">Add Recipe</a></li>
+          @if(Auth::check())
+            <li><a href="/recipe/show">My Recipes</a></li>
+            <li><a href="/recipe/create">Add Recipe</a></li>
+            <li><a href='/logout'>Log out</a></li>
+          @else
+            <li><a href='/'>Home</a></li>
+            <li><a href='/login'>Log in</a></li>
+            <li><a href='/register'>Register</a></li>
+          @endif
         </ul>
       </div>
     </nav>
