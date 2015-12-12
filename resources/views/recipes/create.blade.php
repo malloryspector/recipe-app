@@ -17,7 +17,7 @@
     {{-- Ingredients --}}
     <div class="form-group" id="ingredient">
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-7">
           <label for="ingredient_name">Ingredient Name:</label>
           <input type="text" class="form-control" id="ingredient_name" name="ingredient_name[]"><br>
         </div>
@@ -54,6 +54,9 @@
             <option value="cup">cup</option>
             <option value="pound">pound</option>
           </select><br>
+        </div>
+        <div class="col-sm-1">
+          <a href="#">Delete</a>
         </div>
       </div>
     </div>

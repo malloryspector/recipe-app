@@ -18,7 +18,7 @@
     {{-- Ingredients --}}
     <div class="form-group" id="ingredient">
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-7">
           <label for="ingredient_name">Ingredient Name:</label>
           @foreach($ingredients as $ingredient)
             <input type="text" class="form-control" id="ingredient_name" name="ingredient_name[]" value="{{ $ingredient->ingredient_name }}"><br>
