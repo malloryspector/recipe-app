@@ -20,11 +20,11 @@
       <div class="row">
         <div class="col-sm-8">
           <label for="ingredient_name">Ingredient Name:</label>
-          <input type="text" class="form-control" id="ingredient_name" name="ingredient_name" value="{{ $ingredients->ingredient_name }}">
+          <input type="text" class="form-control" id="ingredient_name" name="ingredient_name[]" value="{{ $ingredients->ingredient_name }}">
         </div>
         <div class="col-sm-1">
           <label for="quantity_whole">Quantity:</label>
-          <select class="form-control" id="quantity_whole" name="quantity_whole">
+          <select class="form-control" id="quantity_whole" name="quantity_whole[]">
             <option {{ $selected = ($ingredients->quantity_whole == 0) ? 'selected' : '' }} value="0" {{ $selected }}>0</option>
             <option {{ $selected = ($ingredients->quantity_whole == 1) ? 'selected' : '' }} value="1" {{ $selected }}>1</option>
             <option {{ $selected = ($ingredients->quantity_whole == 2) ? 'selected' : '' }} value="2" {{ $selected }}>2</option>
@@ -35,7 +35,7 @@
         </div>
         <div class="col-sm-1">
           <label for="quantity_part">&nbsp</label>
-          <select class="form-control" id="quantity_part" name="quantity_part">
+          <select class="form-control" id="quantity_part" name="quantity_part[]">
             <option {{ $selected = ($ingredients->quantity_part == 0) ? 'selected' : '' }} value="0" {{ $selected }}></option>
             <option {{ $selected = ($ingredients->quantity_part == '1/8') ? 'selected' : '' }} value="1/8" {{ $selected }}>1/8</option>
             <option {{ $selected = ($ingredients->quantity_part == '1/4') ? 'selected' : '' }} value="1/4" {{ $selected }}>1/4</option>
@@ -48,7 +48,7 @@
         </div>
         <div class="col-sm-2">
           <label for="unit">Unit:</label>
-          <select class="form-control" id="unit" name="unit">
+          <select class="form-control" id="unit" name="unit[]">
             <option {{ $selected = ($ingredients->unit == 'tsp') ? 'selected' : '' }} value="tsp" {{ $selected }}>tsp</option>
             <option {{ $selected = ($ingredients->unit == 'tbsp') ? 'selected' : '' }} value="tbsp" {{ $selected }}>tbsp</option>
             <option {{ $selected = ($ingredients->unit == 'oz') ? 'selected' : '' }} value="oz" {{ $selected }}>oz</option>
@@ -58,6 +58,7 @@
         </div>
       </div>
     </div>
+    <a href="#" id="add_ingredient">Add another ingredient</a>
     {{-- Directions --}}
     <div class="form-group">
       <label for="directions">Directions:</label>

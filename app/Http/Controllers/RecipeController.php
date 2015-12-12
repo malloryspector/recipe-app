@@ -49,15 +49,29 @@ class RecipeController extends Controller {
 
     $recipe->save();
 
-    $ingredients = new \Recipe\Ingredient();
+    // Get all ingredient values and place into an array
+    $names = $request->ingredient_name;
+    $whole_quantities = $request->quantity_whole;
+    $part_quantities = $request->quantity_part;
+    $unit = $request->unit;
 
-    $ingredients->ingredient_name = $request->ingredient_name;
-    $ingredients->quantity_whole = $request->quantity_whole;
-    $ingredients->quantity_part = $request->quantity_part;
-    $ingredients->unit = $request->unit;
-    $ingredients->recipe_id = $recipe->id;
+    $ingredients = [$names, $whole_quantities, $part_quantities, $unit];
 
-    $ingredients->save();
+    // count how many ingredients were entered
+    $ingredient_count = count($names);
+
+    // loop through $ingredients array and save each ingredient
+    for ($i = 0; $i < $ingredient_count; $i++) {
+      $ingredient = new \Recipe\Ingredient();
+
+      $ingredient->ingredient_name = $ingredients[0][$i];
+      $ingredient->quantity_whole = $ingredients[1][$i];
+      $ingredient->quantity_part = $ingredients[2][$i];
+      $ingredient->unit = $ingredients[3][$i];
+      $ingredient->recipe_id = $recipe->id;
+
+      $ingredient->save();
+    }
 
     return redirect('/recipe/show');
   }
