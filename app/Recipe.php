@@ -9,4 +9,8 @@ class Recipe extends Model {
       // Recipe has many Ingredients
       return $this->belongsToMany('\Recipe\Ingredient');
   }
+
+  public function users() {
+      return $this->belongsToMany('\Recipe\User')->withTimestamps();
+  }
 }
