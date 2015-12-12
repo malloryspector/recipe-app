@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 		var unit = '<div class="col-sm-2"><select class="form-control" id="unit" name="unit[]"><option value="tsp">tsp</option><option value="tbsp">tbsp</option><option value="oz">oz</option><option value="cup">cup</option><option value="pound">pound</option></select></div>';
 
-		$("#ingredient").append('<br><div class="row">' + ingredientName + quantityWhole + quantityPart + unit + '</div>');
+		$("#ingredient").append('<div class="row">' + ingredientName + quantityWhole + quantityPart + unit + '</div><br>');
 
 	});
 

@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col-sm-8">
           <label for="ingredient_name">Ingredient Name:</label>
-          <input type="text" class="form-control" id="ingredient_name" name="ingredient_name[]">
+          <input type="text" class="form-control" id="ingredient_name" name="ingredient_name[]"><br>
         </div>
         <div class="col-sm-1">
           <label for="quantity_whole">Quantity:</label>
@@ -30,7 +30,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-          </select>
+          </select><br>
         </div>
         <div class="col-sm-1">
           <label for="quantity_part">&nbsp</label>
@@ -43,7 +43,7 @@
             <option value="5/8">5/8</option>
             <option value="3/4">3/4</option>
             <option value="7/8">7/8</option>
-          </select>
+          </select><br>
         </div>
         <div class="col-sm-2">
           <label for="unit">Unit:</label>
@@ -53,7 +53,7 @@
             <option value="oz">oz</option>
             <option value="cup">cup</option>
             <option value="pound">pound</option>
-          </select>
+          </select><br>
         </div>
       </div>
     </div>
