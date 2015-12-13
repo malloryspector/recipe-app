@@ -10,20 +10,15 @@ $(document).ready(function(){
 		var quantityWhole = '<div class="col-sm-1"><select class="form-control" id="quantity_whole" name="quantity_whole[]"><option value="0"></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>';
 		var quantityPart = '<div class="col-sm-1"><select class="form-control" id="quantity_part" name="quantity_part[]"><option value="0"></option><option value="1/8">1/8</option><option value="1/4">1/4</option><option value="3/8">3/8</option><option value="1/2">1/2</option><option value="5/8">5/8</option><option value="3/4">3/4</option><option value="7/8">7/8</option></select></div>';
 		var unit = '<div class="col-sm-2"><select class="form-control" id="unit" name="unit[]"><option value="tsp">tsp</option><option value="tbsp">tbsp</option><option value="oz">oz</option><option value="cup">cup</option><option value="pound">pound</option></select></div>';
-		var removeRow = '<div class="col-sm-1"><a href="#">Delete</a></div>';
+		var removeRow = '<div class="col-sm-1 delete_ingredient"><a href="#">Delete</a></div>';
 
-		$("#ingredient").append('<div class="row">' + ingredientName + quantityWhole + quantityPart + unit + removeRow + '</div><br>');
-
-	});
-
-	/*
-	$("").click(function(event) {
+		$("#ingredient").append('<div class="row">' + ingredientName + quantityWhole + quantityPart + unit + removeRow + '</div>');
 
 	});
-	var target = $(event.target);
-	if (target.is("div.delete_ingredient")) {
-		target.prevAll().remove();
-	}
-	*/
+
+	$(document).on('click', ".delete_ingredient", function() {
+		$(this).prevAll().remove();
+		$(this).remove();
+	});
 
 });
