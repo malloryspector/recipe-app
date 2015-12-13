@@ -11,7 +11,13 @@ class RecipeController extends Controller {
   * Responds to requests to GET /recipe/show
   */
   public function getIndex() {
-    $recipes = \Recipe\Recipe::orderBy('id', 'DESC')->get();
+    $user_recipes = \Recipe\User::where('id','=',\Auth::id())->with('recipes')->get();
+
+    // array to hold all recipes for the user
+    $recipes = [];
+    foreach($user_recipes as $user) {
+      $recipes = $user->recipes;
+    }
 
     return view('recipes.index')->with('recipes', $recipes);
   }
@@ -48,6 +54,10 @@ class RecipeController extends Controller {
     $recipe->cook_time = $request->cook_time;
 
     $recipe->save();
+
+    $recipe->users()->sync([\Auth::id()]);
+
+    //$recipe->users()->attach(\Auth::id());
 
     // Get all ingredient values and place into an array
     $names = $request->ingredient_name;
@@ -148,7 +158,9 @@ class RecipeController extends Controller {
     }
 
     $recipe = \Recipe\Recipe::find($id);
-    $recipe->delete();
+
+    // delete for the user only as some recipes can be shared by multiple users
+    $recipe->users()->detach([\Auth::id()]);
 
     return redirect('/recipe/show');
   }
