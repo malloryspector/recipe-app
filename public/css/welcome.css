@@ -1,0 +1,41 @@
+
+/* Full width image help from: https://css-tricks.com/perfect-full-page-background-image/ */
+body {
+  background: url(/images/background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 70px;
+}
+
+/* https://css-tricks.com/centering-css-complete-guide/ */
+.welcome_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.btn {
+  padding: 8px 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #7FB005;
+}
+
+.btn:hover {
+  background-color: #009900;
+  color: #ffffff;
+}

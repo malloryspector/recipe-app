@@ -1,0 +1,23 @@
+body {
+  font-family: 'Lora', serif;
+  padding-top: 70px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.nav {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.navbar-brand {
+  font-family: 'Lora', serif;
+}

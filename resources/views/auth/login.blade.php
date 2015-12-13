@@ -4,24 +4,30 @@
   Login
 @stop
 
-@section('content')
-  <h1>Login</h1>
+@section('styling')
+  <link href="/css/welcome.css" rel="stylesheet">
+@stop
 
-  <form method='POST' action='/login'>
-    @if(count($errors) > 0)
-        @foreach ($errors->all() as $error)
-          {{ $error }}
-        @endforeach
-    @endif
-    <input type='hidden' value='{{ csrf_token() }}' name='_token' >
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="text" class="form-control" id="email" name="email">
-    </div>
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" class="form-control" id="password" name="password">
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-  </form>
+@section('content')
+  <div class="welcome_container col-sm-3">
+
+    <h1>Welcome back!</h1>
+    <h3>Please log in below</h3>
+
+    <form method='POST' action='/login'>
+      @if(count($errors) > 0)
+          @foreach ($errors->all() as $error)
+            {{ $error }}
+          @endforeach
+      @endif
+      <input type='hidden' value='{{ csrf_token() }}' name='_token' >
+      <div class="form-group">
+        <input type="text" class="form-control" id="email" name="email" placeholder="Email Address">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+      </div><br>
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
 @stop

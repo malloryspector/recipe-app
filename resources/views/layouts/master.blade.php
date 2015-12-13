@@ -9,6 +9,7 @@
       {{-- Yield the title if it exists, otherwise default to 'Recipe App Name' --}}
       @yield('title','Digital Recipe Box')
     </title>
+
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
@@ -20,16 +21,21 @@
     <![endif]-->
 
     <!-- Additional Styling -->
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href="/css/style.css" rel="stylesheet">
+
     {{-- page specific styling --}}
     @yield('styling')
   </head>
 
   <body>
+
     <!-- Navigation -->
-    <nav>
+    <nav class="navbar navbar-nav navbar-fixed-top navbar-inverse">
       <div class="container">
         <a href="/" class="navbar-brand">Digital Recipe Box</a>
-        <ul class="nav nav-pills pull-right">
+        <ul class="nav navbar-nav pull-right">
           @if(Auth::check())
             <li><a href="/recipe/show">My Recipes</a></li>
             <li><a href="/recipe/create">Add Recipe</a></li>
@@ -46,10 +52,8 @@
     <!-- Body -->
     <section>
       <div class="container">
-        <div class="row">
-          {{-- Main content for each page --}}
-          @yield('content')
-        </div>
+        {{-- Main content for each page --}}
+        @yield('content')
       </div>
     </section>
 
@@ -60,5 +64,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/recipe.js"></script>
+
   </body>
 </html>
