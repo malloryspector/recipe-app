@@ -46,6 +46,14 @@ class RecipeController extends Controller {
   * Responds to requests to POST /recipe/create
   */
   public function postCreate(Request $request) {
+    // validate data
+    $this->validate($request, [
+      'recipe_name' => 'required',
+      'directions' => 'required',
+      'prep_time' => 'required|numeric|max:100',
+      'cook_time' => 'required|numeric|max:100',
+    ]);
+
     $recipe = new \Recipe\Recipe();
 
     $recipe->recipe_name = $request->recipe_name;
@@ -56,8 +64,6 @@ class RecipeController extends Controller {
     $recipe->save();
 
     $recipe->users()->sync([\Auth::id()]);
-
-    //$recipe->users()->attach(\Auth::id());
 
     // Get all ingredient values and place into an array
     $names = $request->ingredient_name;
@@ -103,6 +109,14 @@ class RecipeController extends Controller {
   * Responds to requests to POST /recipe/edit
   */
   public function postEdit(Request $request) {
+    // validate data
+    $this->validate($request, [
+      'recipe_name' => 'required',
+      'directions' => 'required',
+      'prep_time' => 'required|numeric|max:100',
+      'cook_time' => 'required|numeric|max:100',
+    ]);
+
     $recipe = \Recipe\Recipe::find($request->id);
 
     $recipe->recipe_name = $request->recipe_name;

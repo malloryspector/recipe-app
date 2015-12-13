@@ -8,6 +8,11 @@
   <h1>Add Recipe</h1>
 
   <form method="POST" action="/recipe/create">
+    @if(count($errors) > 0)
+        @foreach ($errors->all() as $error)
+          {{ $error }}
+        @endforeach
+    @endif
     <input type='hidden'value='{{ csrf_token() }}' name='_token' >
     {{-- Recipe Name --}}
     <div class="form-group">
