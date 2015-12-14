@@ -4,6 +4,10 @@
   Edit Recipe
 @stop
 
+@section('styling')
+  <link href="/css/recipe.css" rel="stylesheet">
+@stop
+
 @section('content')
   <h1>Edit Recipe</h1>
 
@@ -18,18 +22,18 @@
     {{-- Recipe Name --}}
     <div class="form-group">
       <label for="recipe_name">Recipe Name:</label>
-      <input type="text" class="form-control" id="recipe_name" name="recipe_name" value="{{ $recipe->recipe_name }}">
+      <input type="text" class="form-control" id="recipe_name" name="recipe_name" value="{{ old('recipe_name', $recipe->recipe_name) }}">
     </div>
     {{-- Ingredients --}}
     <div class="form-group" id="ingredient">
       <div class="row">
-        <div class="col-sm-7">
+        <div class="col-sm-6">
           <label for="ingredient_name">Ingredient Name:</label>
         </div>
         <div class="col-sm-1">
           <label for="quantity_whole">Quantity:</label>
         </div>
-        <div class="col-sm-1">
+        <div class="col-sm-2">
           <label for="quantity_part">&nbsp</label>
         </div>
         <div class="col-sm-2">
@@ -39,7 +43,7 @@
 
       @foreach($ingredients as $ingredient)
         <div class="row">
-          <div class="col-sm-7">
+          <div class="col-sm-6">
               <input type="text" class="form-control" id="ingredient_name" name="ingredient_name[]" value="{{ $ingredient->ingredient_name }}">
           </div>
           <div class="col-sm-1">
@@ -52,7 +56,7 @@
                 <option {{ $selected = ($ingredient->quantity_whole == 5) ? 'selected' : '' }} value="5" {{ $selected }}>5</option>
               </select>
           </div>
-          <div class="col-sm-1">
+          <div class="col-sm-2">
               <select class="form-control" id="quantity_part" name="quantity_part[]">
                 <option {{ $selected = ($ingredient->quantity_part == 0) ? 'selected' : '' }} value="0" {{ $selected }}></option>
                 <option {{ $selected = ($ingredient->quantity_part == '1/8') ? 'selected' : '' }} value="1/8" {{ $selected }}>1/8</option>
@@ -74,30 +78,30 @@
               </select>
           </div>
           <div class="col-sm-1 delete_ingredient">
-              <a href="#">Delete</a>
+            <a href="#">Delete</a>
           </div>
         </div>
       @endforeach
     </div>
-    <a href="#" id="add_ingredient">Add another ingredient</a>
+    <a class="btn-sm" href="#" id="add_ingredient">Add another ingredient</a><br><br>
     {{-- Directions --}}
     <div class="form-group">
       <label for="directions">Directions:</label>
-      <textarea type="text" rows="5" class="form-control" id="directions" name="directions">{{ $recipe->directions }}</textarea>
+      <textarea type="text" rows="5" class="form-control" id="directions" name="directions">{{ old('directions', $recipe->directions) }}</textarea>
     </div>
     {{-- Time to Cook --}}
     <div class="form-group">
       <div class="row">
         <div class="col-sm-2">
           <label for="prep_time">Prep Time (in minutes):</label>
-          <input type="text" class="form-control" id="prep_time" name="prep_time" value="{{ $recipe->prep_time }}">
+          <input type="text" class="form-control" id="prep_time" name="prep_time" value="{{ old('prep_time', $recipe->prep_time) }}">
         </div>
         <div class="col-sm-2">
           <label for="cook_time">Cook Time (in minutes):</label>
-          <input type="text" class="form-control" id="cook_time" name="cook_time" value="{{ $recipe->cook_time }}">
+          <input type="text" class="form-control" id="cook_time" name="cook_time" value="{{ old('cook_time', $recipe->cook_time) }}">
         </div>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <button type="submit" class="btn">Save Changes</button>
   </form>
 @stop

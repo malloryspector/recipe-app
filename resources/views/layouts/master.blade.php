@@ -34,7 +34,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-nav navbar-fixed-top navbar-inverse">
       <div class="container">
-        <a href="/" class="navbar-brand">Digital Recipe Box</a>
+        <a href="/" class="navbar-brand">Recipe Box</a>
         <ul class="nav navbar-nav pull-right">
           @if(Auth::check())
             <li><a href="/recipe/show">My Recipes</a></li>

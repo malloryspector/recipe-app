@@ -10,8 +10,7 @@
 
 @section('content')
   <div class="welcome_container col-sm-4">
-    <h1>Welcome to the digital recipe box</h1>
-    <h3>Stay organized with one place to keep all your favorite meals</h3><br>
+    <h1>One place to keep all your favorite meals</h3><br>
     <a href="/login" class="btn">Log In</a>&nbsp&nbsp
     <a href="/register" class="btn">Register</a>
   </div>

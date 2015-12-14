@@ -4,7 +4,12 @@
   Create Recipe
 @stop
 
+@section('styling')
+  <link href="/css/recipe.css" rel="stylesheet">
+@stop
+
 @section('content')
+
   <h1>Add Recipe</h1>
 
   <form method="POST" action="/recipe/create">
@@ -17,18 +22,18 @@
     {{-- Recipe Name --}}
     <div class="form-group">
       <label for="recipe_name">Recipe Name:</label>
-      <input type="text" class="form-control" id="recipe_name" name="recipe_name">
+      <input type="text" class="form-control" id="recipe_name" name="recipe_name" value="{{ old('recipe_name', '') }}">
     </div>
     {{-- Ingredients --}}
     <div class="form-group" id="ingredient">
       <div class="row">
-        <div class="col-sm-7">
+        <div class="col-sm-6">
           <label for="ingredient_name">Ingredient Name:</label>
         </div>
         <div class="col-sm-1">
           <label for="quantity_whole">Quantity:</label>
         </div>
-        <div class="col-sm-1">
+        <div class="col-sm-2">
           <label for="quantity_part">&nbsp</label>
         </div>
         <div class="col-sm-2">
@@ -36,7 +41,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-7">
+        <div class="col-sm-6">
           <input type="text" class="form-control" id="ingredient_name" name="ingredient_name[]">
         </div>
         <div class="col-sm-1">
@@ -49,7 +54,7 @@
             <option value="5">5</option>
           </select>
         </div>
-        <div class="col-sm-1">
+        <div class="col-sm-2">
           <select class="form-control" id="quantity_part" name="quantity_part[]">
             <option value="0"></option>
             <option value="1/8">1/8</option>
@@ -63,37 +68,36 @@
         </div>
         <div class="col-sm-2">
           <select class="form-control" id="unit" name="unit[]">
-            <option value="tsp">tsp</option>
-            <option value="tbsp">tbsp</option>
-            <option value="oz">oz</option>
+            <option value="teaspoon">teaspoon</option>
+            <option value="tablespoon">tablespoon</option>
+            <option value="ounce">ounce</option>
             <option value="cup">cup</option>
             <option value="pound">pound</option>
           </select>
         </div>
         <div class="col-sm-1 delete_ingredient">
-          <a href="#">Delete</a>
         </div>
       </div>
     </div>
-    <a href="#" id="add_ingredient">Add another ingredient</a>
+    <a class="btn-sm" href="#" id="add_ingredient">Add another ingredient</a><br><br>
     {{-- Directions --}}
     <div class="form-group">
       <label for="directions">Directions:</label>
-      <textarea type="text" rows="5" class="form-control" id="directions" name="directions" value=""></textarea>
+      <textarea type="text" rows="5" class="form-control" id="directions" name="directions">{{ old('directions', '') }}</textarea>
     </div>
     {{-- Time to Cook --}}
     <div class="form-group">
       <div class="row">
         <div class="col-sm-2">
-          <label for="prep_time">Prep Time (in minutes):</label>
-          <input type="text" class="form-control" id="prep_time" name="prep_time" value="">
+          <label for="prep_time">Prep Time:</label>
+          <input type="text" class="form-control" id="prep_time" name="prep_time" value="{{ old('prep_time', '') }}" placeholder="(in minutes)">
         </div>
         <div class="col-sm-2">
-          <label for="cook_time">Cook Time (in minutes):</label>
-          <input type="text" class="form-control" id="cook_time" name="cook_time" value="">
+          <label for="cook_time">Cook Time:</label>
+          <input type="text" class="form-control" id="cook_time" name="cook_time" value="{{ old('cook_time', '') }}" placeholder="(in minutes)">
         </div>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <button type="submit" class="btn">Save Changes</button>
   </form>
 @stop
