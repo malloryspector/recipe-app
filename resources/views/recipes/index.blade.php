@@ -10,7 +10,7 @@
 
 @section('content')
   <div class="col-sm-6 col-sm-offset-3 center">
-    <h1>Name's Recipes</h1><br>
+    <h1>{{ $name }}'s Recipes</h1><br>
 
     @if(sizeof($recipes) == 0)
       <p>You have no recipes saved. <a class="btn-sm" href="/recipe/create">Add a recipe</a> to get started!</p>

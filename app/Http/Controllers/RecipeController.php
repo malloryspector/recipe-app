@@ -17,9 +17,12 @@ class RecipeController extends Controller {
     $recipes = [];
     foreach($user_recipes as $user) {
       $recipes = $user->recipes;
+      $name = $user->name;
     }
 
-    return view('recipes.index')->with('recipes', $recipes);
+    return view('recipes.index')
+      ->with('recipes', $recipes)
+      ->with('name', $name);
   }
 
   /**
