@@ -61,7 +61,7 @@
           </div>
           <div class="col-sm-2">
               <select class="form-control" id="quantity_part" name="quantity_part[]">
-                <option {{ $selected = ($ingredient->quantity_part == 0) ? 'selected' : '' }} value="0" {{ $selected }}></option>
+                <option {{ $selected = ($ingredient->quantity_part == 0) ? 'selected' : '' }} value="0" {{ $selected }}>0</option>
                 <option {{ $selected = ($ingredient->quantity_part == '1/8') ? 'selected' : '' }} value="1/8" {{ $selected }}>1/8</option>
                 <option {{ $selected = ($ingredient->quantity_part == '1/4') ? 'selected' : '' }} value="1/4" {{ $selected }}>1/4</option>
                 <option {{ $selected = ($ingredient->quantity_part == '3/8') ? 'selected' : '' }} value="3/8" {{ $selected }}>3/8</option>

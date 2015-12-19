@@ -4,6 +4,7 @@ namespace Recipe\Http\Controllers;
 
 use Recipe\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Recipe\Http\Controllers\Request\IngredientRequest;
 
 class RecipeController extends Controller {
 
@@ -80,16 +81,21 @@ class RecipeController extends Controller {
     $ingredient_count = count($names);
 
     // loop through $ingredients array and save each ingredient
+    // if no ingredient name was entered do not save the ingredient to the database
     for ($i = 0; $i < $ingredient_count; $i++) {
-      $ingredient = new \Recipe\Ingredient();
+      if ($ingredients[0][$i] == '') {
+        continue;
+      } else {
+        $ingredient = new \Recipe\Ingredient();
 
-      $ingredient->ingredient_name = $ingredients[0][$i];
-      $ingredient->quantity_whole = $ingredients[1][$i];
-      $ingredient->quantity_part = $ingredients[2][$i];
-      $ingredient->unit = $ingredients[3][$i];
-      $ingredient->recipe_id = $recipe->id;
+        $ingredient->ingredient_name = $ingredients[0][$i];
+        $ingredient->quantity_whole = $ingredients[1][$i];
+        $ingredient->quantity_part = $ingredients[2][$i];
+        $ingredient->unit = $ingredients[3][$i];
+        $ingredient->recipe_id = $recipe->id;
 
-      $ingredient->save();
+        $ingredient->save();
+      }
     }
 
     \Session::flash('flash_message','Your recipe has been created.');
@@ -184,5 +190,4 @@ class RecipeController extends Controller {
     \Session::flash('flash_message','Your recipe has been deleted.');
     return redirect('/recipe/show');
   }
-
 }

@@ -15,9 +15,9 @@
   <form method="POST" action="/recipe/create">
     <div>
       @if(count($errors) > 0)
-          @foreach ($errors->all() as $error)
-            {{ $error }}<br>
-          @endforeach
+        @foreach ($errors->all() as $error)
+          {{ $error }}<br>
+        @endforeach
       @endif
       <br>
     </div>
@@ -33,11 +33,8 @@
         <div class="col-sm-6">
           <label for="ingredient_name">Ingredient Name:</label>
         </div>
-        <div class="col-sm-1">
-          <label for="quantity_whole">Quantity:</label>
-        </div>
-        <div class="col-sm-2">
-          <label for="quantity_part">&nbsp</label>
+        <div class="col-sm-3">
+          <label for="quantity_whole">Quantity: (ex. 1 and 1/2)</label>
         </div>
         <div class="col-sm-2">
           <label for="unit">Unit:</label>
@@ -49,7 +46,7 @@
         </div>
         <div class="col-sm-1">
           <select class="form-control" id="quantity_whole" name="quantity_whole[]">
-            <option value="0"></option>
+            <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -59,7 +56,7 @@
         </div>
         <div class="col-sm-2">
           <select class="form-control" id="quantity_part" name="quantity_part[]">
-            <option value="0"></option>
+            <option value="0">0</option>
             <option value="1/8">1/8</option>
             <option value="1/4">1/4</option>
             <option value="3/8">3/8</option>
