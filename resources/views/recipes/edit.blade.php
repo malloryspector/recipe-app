@@ -12,11 +12,14 @@
   <h1>Edit Recipe</h1>
 
   <form method="POST" action="/recipe/edit">
-    @if(count($errors) > 0)
-        @foreach ($errors->all() as $error)
-          {{ $error }}
-        @endforeach
-    @endif
+    <div>
+      @if(count($errors) > 0)
+          @foreach ($errors->all() as $error)
+            {{ $error }}<br>
+          @endforeach
+      @endif
+      <br>
+    </div>
     <input type='hidden' value='{{ csrf_token() }}' name='_token' >
     <input type='hidden' name='id' value='{{ $recipe->id }}' >
     {{-- Recipe Name --}}

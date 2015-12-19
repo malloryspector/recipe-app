@@ -30,6 +30,11 @@
   </head>
 
   <body>
+    @if(\Session::has('flash_message'))
+      <div class='flash_message'>
+        {{ \Session::get('flash_message') }}
+      </div>
+    @endif
 
     <!-- Navigation -->
     <nav class="navbar navbar-nav navbar-fixed-top navbar-inverse">

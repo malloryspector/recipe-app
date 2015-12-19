@@ -89,6 +89,7 @@ class RecipeController extends Controller {
       $ingredient->save();
     }
 
+    \Session::flash('flash_message','Your recipe has been created.');
     return redirect('/recipe/show');
   }
 
@@ -157,6 +158,7 @@ class RecipeController extends Controller {
       $ingredient->save();
     }
 
+    \Session::flash('flash_message','Your recipe has been edited.');
     return redirect('/recipe/show/' . $request->id);
   }
 
@@ -176,6 +178,7 @@ class RecipeController extends Controller {
     // delete for the user only as some recipes can be shared by multiple users
     $recipe->users()->detach([\Auth::id()]);
 
+    \Session::flash('flash_message','Your recipe has been deleted.');
     return redirect('/recipe/show');
   }
 
