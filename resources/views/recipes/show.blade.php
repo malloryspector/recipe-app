@@ -16,7 +16,7 @@
 
     <h4>Ingredients</h4>
     @foreach($ingredients as $ingredient)
-      <p>{{ $ingredient->quantity_whole . ' ' . $ingredient->quantity_part . ' ' . $ingredient->unit . ' ' . $ingredient->ingredient_name }}</p>
+      <p>{{ ($ingredient->quantity_whole === 0) ? '' : $ingredient->quantity_whole . ' '}}{{ ($ingredient->quantity_part === 0) ? '' : $ingredient->quantity_part . ' '}}{{ $ingredient->unit . ' ' . strtolower($ingredient->ingredient_name) }}</p>
     @endforeach
     <br>
 
