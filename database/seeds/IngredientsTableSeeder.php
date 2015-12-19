@@ -22,7 +22,7 @@ class IngredientsTableSeeder extends Seeder {
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         'ingredient_name' => 'Raisins',
         'quantity_whole' => 1,
-        'unit' => 'cups',
+        'unit' => 'cup',
         'recipe_id' => 1,
       ]);
       DB::table('ingredients')->insert([
@@ -30,7 +30,7 @@ class IngredientsTableSeeder extends Seeder {
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         'ingredient_name' => 'Celery',
         'quantity_whole' => 5,
-        'unit' => 'stalks',
+        'unit' => 'stalk',
         'recipe_id' => 1,
       ]);
       DB::table('ingredients')->insert([
@@ -54,7 +54,7 @@ class IngredientsTableSeeder extends Seeder {
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         'ingredient_name' => 'Black Beans',
         'quantity_whole' => 1,
-        'unit' => 'pounds',
+        'unit' => 'pound',
         'recipe_id' => 3,
       ]);
       DB::table('ingredients')->insert([

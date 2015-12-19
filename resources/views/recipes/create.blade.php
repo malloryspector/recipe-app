@@ -73,6 +73,13 @@
             <option value="ounce">ounce</option>
             <option value="cup">cup</option>
             <option value="pound">pound</option>
+            <option value="piece">piece</option>
+            <option value="stalk">stalk</option>
+            <option value="pinch">pinch</option>
+            <option value="dash">dash</option>
+            <option value="bunch">bunch</option>
+            <option value="clove">clove</option>
+            <option value="can">can</option>
           </select>
         </div>
         <div class="col-sm-1 delete_ingredient">

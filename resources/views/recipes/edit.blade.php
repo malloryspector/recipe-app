@@ -73,11 +73,18 @@
           </div>
           <div class="col-sm-2">
               <select class="form-control" id="unit" name="unit[]">
-                <option {{ $selected = ($ingredient->unit == 'tsp') ? 'selected' : '' }} value="tsp" {{ $selected }}>tsp</option>
-                <option {{ $selected = ($ingredient->unit == 'tbsp') ? 'selected' : '' }} value="tbsp" {{ $selected }}>tbsp</option>
-                <option {{ $selected = ($ingredient->unit == 'oz') ? 'selected' : '' }} value="oz" {{ $selected }}>oz</option>
+                <option {{ $selected = ($ingredient->unit == 'teaspoon') ? 'selected' : '' }} value="teaspoon" {{ $selected }}>teaspoon</option>
+                <option {{ $selected = ($ingredient->unit == 'tablespoon') ? 'selected' : '' }} value="tablespoon" {{ $selected }}>tablespoon</option>
+                <option {{ $selected = ($ingredient->unit == 'ounce') ? 'selected' : '' }} value="ounce" {{ $selected }}>ounce</option>
                 <option {{ $selected = ($ingredient->unit == 'cup') ? 'selected' : '' }} value="cup" {{ $selected }}>cup</option>
                 <option {{ $selected = ($ingredient->unit == 'pound') ? 'selected' : '' }} value="pound" {{ $selected }}>pound</option>
+                <option {{ $selected = ($ingredient->unit == 'piece') ? 'selected' : '' }} value="piece" {{ $selected }}>piece</option>
+                <option {{ $selected = ($ingredient->unit == 'stalk') ? 'selected' : '' }} value="stalk" {{ $selected }}>stalk</option>
+                <option {{ $selected = ($ingredient->unit == 'pinch') ? 'selected' : '' }} value="pinch" {{ $selected }}>pinch</option>
+                <option {{ $selected = ($ingredient->unit == 'dash') ? 'selected' : '' }} value="dash" {{ $selected }}>dash</option>
+                <option {{ $selected = ($ingredient->unit == 'bunch') ? 'selected' : '' }} value="bunch" {{ $selected }}>bunch</option>
+                <option {{ $selected = ($ingredient->unit == 'clove') ? 'selected' : '' }} value="clove" {{ $selected }}>clove</option>
+                <option {{ $selected = ($ingredient->unit == 'can') ? 'selected' : '' }} value="can" {{ $selected }}>can</option>
               </select>
           </div>
           <div class="col-sm-1 delete_ingredient">
