@@ -32,7 +32,8 @@
     <p>{{ $recipe->cook_time }} minutes</p>
 
     <br>
-    <a class="btn-sm" href="/recipe/edit/{{ $recipe->id }}">Edit this recipe</a>
+    <a class="btn-sm" href="/recipe/edit/{{ $recipe->id }}">Edit recipe</a>
+    <a class="btn-sm" href="/recipe/delete/{{ $recipe->id }}">Delete recipe</a>
     <br><br><br>
 
   </div>
