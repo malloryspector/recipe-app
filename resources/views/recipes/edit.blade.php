@@ -61,14 +61,14 @@
           </div>
           <div class="col-sm-2">
               <select class="form-control" id="quantity_part" name="quantity_part[]">
-                <option {{ $selected = ($ingredient->quantity_part == 0) ? 'selected' : '' }} value="0" {{ $selected }}>0</option>
-                <option {{ $selected = ($ingredient->quantity_part == '1/8') ? 'selected' : '' }} value="&frac18;" {{ $selected }}>1/8</option>
-                <option {{ $selected = ($ingredient->quantity_part == '1/4') ? 'selected' : '' }} value="&frac14;" {{ $selected }}>1/4</option>
-                <option {{ $selected = ($ingredient->quantity_part == '3/8') ? 'selected' : '' }} value="&frac38;" {{ $selected }}>3/8</option>
-                <option {{ $selected = ($ingredient->quantity_part == '1/2') ? 'selected' : '' }} value="&frac12;" {{ $selected }}>1/2</option>
-                <option {{ $selected = ($ingredient->quantity_part == '5/8') ? 'selected' : '' }} value="&frac58;" {{ $selected }}>5/8</option>
-                <option {{ $selected = ($ingredient->quantity_part == '3/4') ? 'selected' : '' }} value="&frac34;" {{ $selected }}>3/4</option>
-                <option {{ $selected = ($ingredient->quantity_part == '7/8') ? 'selected' : '' }} value="&frac78;" {{ $selected }}>7/8</option>
+                <option {{ $selected = ($ingredient->quantity_part == '0') ? 'selected' : '' }} value="0" {{ $selected }}>0</option>
+                <option {{ $selected = ($ingredient->quantity_part == '1/8') ? 'selected' : '' }} value="1/8" {{ $selected }}>1/8</option>
+                <option {{ $selected = ($ingredient->quantity_part == '1/4') ? 'selected' : '' }} value="1/4" {{ $selected }}>1/4</option>
+                <option {{ $selected = ($ingredient->quantity_part == '3/8') ? 'selected' : '' }} value="3/8" {{ $selected }}>3/8</option>
+                <option {{ $selected = ($ingredient->quantity_part == '1/2') ? 'selected' : '' }} value="1/2" {{ $selected }}>1/2</option>
+                <option {{ $selected = ($ingredient->quantity_part == '5/8') ? 'selected' : '' }} value="5/8" {{ $selected }}>5/8</option>
+                <option {{ $selected = ($ingredient->quantity_part == '3/4') ? 'selected' : '' }} value="3/4" {{ $selected }}>3/4</option>
+                <option {{ $selected = ($ingredient->quantity_part == '7/8') ? 'selected' : '' }} value="7/8" {{ $selected }}>7/8</option>
               </select>
           </div>
           <div class="col-sm-2">
