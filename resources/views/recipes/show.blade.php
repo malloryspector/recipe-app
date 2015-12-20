@@ -31,5 +31,9 @@
     <h4>Cook Time</h4>
     <p>{{ $recipe->cook_time }} minutes</p>
 
+    <br>
+    <a class="btn-sm" href="/recipe/edit/{{ $recipe->id }}">Edit this recipe</a>
+    <br><br><br>
+
   </div>
 @stop

@@ -52,6 +52,22 @@ class IngredientsTableSeeder extends Seeder {
       DB::table('ingredients')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'ingredient_name' => 'Olive Oil',
+        'quantity_whole' => 3,
+        'unit' => 'tablespoon',
+        'recipe_id' => 2,
+      ]);
+      DB::table('ingredients')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'ingredient_name' => 'Bread crumbs',
+        'quantity_whole' => 1,
+        'unit' => 'cup',
+        'recipe_id' => 2,
+      ]);
+      DB::table('ingredients')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         'ingredient_name' => 'Black Beans',
         'quantity_whole' => 1,
         'unit' => 'pound',
@@ -63,6 +79,30 @@ class IngredientsTableSeeder extends Seeder {
         'ingredient_name' => 'Salsa',
         'quantity_whole' => 1,
         'unit' => 'can',
+        'recipe_id' => 3,
+      ]);
+      DB::table('ingredients')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'ingredient_name' => 'Vegetable broth',
+        'quantity_whole' => 1,
+        'unit' => 'cup',
+        'recipe_id' => 3,
+      ]);
+      DB::table('ingredients')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'ingredient_name' => 'Ground cumin',
+        'quantity_whole' => 1,
+        'unit' => 'teaspoon',
+        'recipe_id' => 3,
+      ]);
+      DB::table('ingredients')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'ingredient_name' => 'Green onion',
+        'quantity_whole' => 2,
+        'unit' => 'tablespoon',
         'recipe_id' => 3,
       ]);
     }
