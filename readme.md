@@ -1,18 +1,12 @@
 # Recipe Box
 
 ## Live URL
-<http://p4.mspector2015.com>
+<http://recipe-box.malloryspector.com>
 
 ## Description
 Recipe Box is an application where users can save and manage their favorite recipes.
 
-## Demo
-<http://screencast.com/t/SCRmoCZVT>
-
-## Details for teaching team
-
-#### User Authentication
-* Two existing users are set up with added recipes: jill@harvard.edu and jamal@harvard.edu
+## Details
 
 #### Database Tables In Addition To Users Tables
 * recipes
@@ -33,5 +27,3 @@ Recipe Box is an application where users can save and manage their favorite reci
 ## Outside code
 * Bootstrap: http://getbootstrap.com/
 * Google Fonts: https://www.google.com/fonts
-* Full Background Image CSS Help: https://css-tricks.com/perfect-full-page-background-image/
-* Centering CSS Help: https://css-tricks.com/centering-css-complete-guide/
